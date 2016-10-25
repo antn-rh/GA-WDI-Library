@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'welcome#index'
+
   get 'authors/' => 'authors#index'
   get 'authors/:id' => 'authors#show', as: :author
   get 'authors/new' => 'authors#new', as: :new_author
@@ -20,7 +22,7 @@ Rails.application.routes.draw do
 # ---------------------------------------------------------
   get 'categories/' => 'categories#index'
   get 'categories/:id' => 'categories#show', as: :category
-  get 'categories/new' => 'categories#new', as: :new_category 
+  get 'categories/new' => 'categories#new', as: :new_category
   post 'categories/' => 'categories#create'
   get 'categories/:id/edit' => 'categories#edit', as: :edit_category
   patch 'categories/:id' => 'categories#update'
